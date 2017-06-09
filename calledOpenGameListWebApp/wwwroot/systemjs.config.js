@@ -14,7 +14,15 @@
     };
     // configure @angular packages    
     var ngPackageNames = [
-        'common', 'compiler', 'core', 'http', 'platform-browser', 'platform-browser-dynamic', 'upgrade',
+        'common',
+        'compiler',
+        'core',
+        'http',
+        'platform-browser',
+        'platform-browser-dynamic',
+        'upgrade',
+        'forms',
+        'router'
     ];
 
     function packIndex(pkgName) {
