@@ -1,7 +1,7 @@
-System.register(["@angular/router", "./home.component", "./about.component", "./login.component", "./page-not-found.component"], function (exports_1, context_1) {
+System.register(["@angular/router", "./home.component", "./about.component", "./login.component", "./page-not-found.component", "./item-detail.component"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var router_1, home_component_1, about_component_1, login_component_1, page_not_found_component_1, appRoutes, AppRoutingProviders, AppRouting;
+    var router_1, home_component_1, about_component_1, login_component_1, page_not_found_component_1, item_detail_component_1, appRoutes, AppRoutingProviders, AppRouting;
     return {
         setters: [
             function (router_1_1) {
@@ -18,6 +18,9 @@ System.register(["@angular/router", "./home.component", "./about.component", "./
             },
             function (page_not_found_component_1_1) {
                 page_not_found_component_1 = page_not_found_component_1_1;
+            },
+            function (item_detail_component_1_1) {
+                item_detail_component_1 = item_detail_component_1_1;
             }
         ],
         execute: function () {
@@ -40,7 +43,7 @@ System.register(["@angular/router", "./home.component", "./about.component", "./
                 },
                 {
                     path: "item/:id",
-                    component: ItemDetail
+                    component: item_detail_component_1.ItemDetailComponent
                 },
                 {
                     path: '**',

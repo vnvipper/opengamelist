@@ -25,7 +25,7 @@ const appRoutes: Routes = [
     },
     {
         path: "item/:id",
-        component: ItemDetail
+        component: ItemDetailComponent
     },
     {
         path: '**',
