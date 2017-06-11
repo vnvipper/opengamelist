@@ -32,7 +32,7 @@ System.register(["@angular/core", "@angular/router", "./item.service"], function
                 }
                 ItemDetailComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    var id = this.activatedRoute.params['id'];
+                    var id = +this.activatedRoute.snapshot.params['id'];
                     if (id) {
                         this.itemService.get(id).subscribe(function (item) { return _this.item = item; });
                         console.log(this.item);
