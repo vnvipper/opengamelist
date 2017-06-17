@@ -11,7 +11,9 @@ var srcPaths = {
     js: [
         'Scripts/js/**/*.js', 'node_modules/core-js/client/shim.min.js', 'node_modules/zone.js/dist/zone.js',
         'node_modules/reflect-metadata/Reflect.js', 'node_modules/systemjs/dist/system.src.js',
-        'node_modules/typescript/lib/typescript.js'
+        'node_modules/typescript/lib/typescript.js',
+        'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js',
+        'node_modules/moment/moment.js' 
     ],
     js_angular: ['node_modules/@angular/**'],
     js_rxjs: ['node_modules/rxjs/**'],
@@ -71,7 +73,7 @@ gulp.task('less_clean',
     });
 // Watch specified files and define what to do upon file changes 
 gulp.task('watch', function () {
-    gulp.watch([srcPaths.app, srcPaths.js], ['app', 'js']);
+    gulp.watch([srcPaths.app, srcPaths.js, srcPaths.less], ['app', 'js', 'less']);
 });
 // Global cleanup task 
 gulp.task('cleanup', ['app_clean', 'js_clean', 'less_clean']);

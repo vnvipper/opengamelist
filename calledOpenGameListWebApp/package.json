@@ -3,6 +3,8 @@
   "name": "opengamelistwebapp",
   "private": true,
   "dependencies": {
+    "moment": "^2.14.1",
+    "ng2-bootstrap": "^1.0.24",
     "@angular/common": "2.0.0-rc.5",
     "@angular/compiler": "2.0.0-rc.5",
     "@angular/core": "2.0.0-rc.5",
