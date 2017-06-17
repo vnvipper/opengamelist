@@ -2,7 +2,7 @@
   "_args": [
     [
       "rxjs@5.0.0-beta.6",
-      "E:\\PRACTICE\\MVC\\opengamelist\\calledOpenGameListWebApp"
+      "C:\\Users\\DELL\\Desktop\\projects\\opengamelist\\calledOpenGameListWebApp"
     ]
   ],
   "_from": "rxjs@5.0.0-beta.6",
@@ -35,7 +35,7 @@
   "_shasum": "cb6dc46d6ddfedfeefc9b15dafd09c34a4370d23",
   "_shrinkwrap": null,
   "_spec": "rxjs@5.0.0-beta.6",
-  "_where": "E:\\PRACTICE\\MVC\\opengamelist\\calledOpenGameListWebApp",
+  "_where": "C:\\Users\\DELL\\Desktop\\projects\\opengamelist\\calledOpenGameListWebApp",
   "author": {
     "email": "blesh@netflix.com",
     "name": "Ben Lesh"
