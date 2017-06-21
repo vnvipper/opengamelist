@@ -2,7 +2,7 @@
   "_args": [
     [
       "@angular/forms@0.3.0",
-      "E:\\PRACTICE\\MVC\\opengamelist\\calledOpenGameListWebApp"
+      "C:\\Users\\DELL\\Desktop\\project\\opengamelist\\calledOpenGameListWebApp"
     ]
   ],
   "_from": "@angular/forms@0.3.0",
@@ -35,7 +35,7 @@
   "_shasum": "d76218bb22b74d5ac3878915d377de0487c34069",
   "_shrinkwrap": null,
   "_spec": "@angular/forms@0.3.0",
-  "_where": "E:\\PRACTICE\\MVC\\opengamelist\\calledOpenGameListWebApp",
+  "_where": "C:\\Users\\DELL\\Desktop\\project\\opengamelist\\calledOpenGameListWebApp",
   "author": {
     "name": "angular"
   },
