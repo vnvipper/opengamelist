@@ -5,11 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using calledOpenGameListWebApp.Data.Comments;
 using calledOpenGameListWebApp.Data.Items;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace calledOpenGameListWebApp.Data.Users
 {
-    public class ApplicationUser
+    public class ApplicationUser : IdentityUser
     {
         #region MyRegion
         public ApplicationUser()
@@ -20,14 +21,14 @@ namespace calledOpenGameListWebApp.Data.Users
 
         #region Properties
 
-        [Key]
-        [Required]
-        public string Id { get; set; }
-        [Required]
-        [MaxLength(128)]
-        public string UserName { get; set; }
-        [Required]
-        public string Email { get; set; }
+        //[Key]
+        //[Required]
+        //public string Id { get; set; }
+        //[Required]
+        //[MaxLength(128)]
+        //public string UserName { get; set; }
+        //[Required]
+        //public string Email { get; set; }
         public string DisplayName { get; set; }
         public string Notes { get; set; }
         [Required]

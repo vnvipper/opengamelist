@@ -4,9 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using calledOpenGameListWebApp.Data;
 using calledOpenGameListWebApp.Data.Items;
+using calledOpenGameListWebApp.Data.Users;
 using calledOpenGameListWebApp.ViewModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
@@ -37,6 +39,17 @@ namespace calledOpenGameListWebApp
             services.AddMvc();
             // Add EntityFramework's Identity support.
             services.AddEntityFramework();
+
+            // Add Identity Services & Stores
+            services.AddIdentity<ApplicationUser, IdentityRole>(config =>
+                {
+                    config.User.RequireUniqueEmail = true;
+                    config.Password.RequireNonAlphanumeric = false;
+                    config.Cookies.ApplicationCookie.AutomaticChallenge = false;
+                })
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
             //Add ApplicationDbContext
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));

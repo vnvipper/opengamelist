@@ -46,16 +46,18 @@ System.register(["@angular/core", "@angular/router", "./item.service"], function
                 };
                 ItemDetailViewComponent.prototype.onItemDetailEdit = function (item) {
                     this.router.navigate(["item/edit", item.Id]);
+                    return false;
+                };
+                ItemDetailViewComponent.prototype.onBack = function () {
+                    this.router.navigate(['']);
                 };
                 return ItemDetailViewComponent;
             }());
             ItemDetailViewComponent = __decorate([
                 core_1.Component({
                     selector: "item-detail-view",
-                    template: "      \n    <div *ngIf=\"item\" class=\"item-container\">    \n        <div class=\"item-tab-menu\">        \n            <span (click)=\"onItemDetailEdit(item)\">Edit</span>        \n            <span class=\"selected\">View</span>    \n        </div>    \n        <div class=\"item-details\">        \n            <div class=\"mode\">Display Mode</div>        \n            <h2>{{item.Title}}</h2>        \n            <p>{{item.Description}}</p>    \n        </div> \n    </div> \n    ",
-                    styles: [
-                        "        \n    .item-container {    width: 600px; }\n.item-tab-menu {    margin-right: 30px; }\n.item-tab-menu span {    background-color: #dddddd;    border: 1px solid #666666;    border-bottom: 0;    cursor: pointer;    display: block;    float: right;    margin: 0 0 -1px 5px;    padding: 5px 10px 4px 10px;    text-align: center;    width: 60px; }.item-tab-menu span.selected {    background-color: #eeeeee;    cursor: auto;    font-weight: bold;    padding-bottom: 5px; }\n.item-details {    background-color: #eeeeee;    border: 1px solid black;    clear: both;    margin: 0;    padding: 5px 10px; }\n.item-details * {    vertical-align: middle; }\n.item-details .mode {    font-size: 0.8em;    color: #777777; }\n.item-details ul li {    padding: 5px 0; } \n    "
-                    ]
+                    template: "      \n<div *ngIf=\"item\">\n        <h2>        <a href=\"#\" (click)=\"onBack()\">&laquo; Back to Home</a>    </h2>\n        <div class=\"item-container\">\n            <ul class=\"nav nav-tabs\">\n                <li role=\"presentation\"> <a href=\"#\" (click)=\"onItemDetailEdit(item)\">Edit</a> </li>\n                <li role=\"presentation\" class=\"active\"> <a href=\"#\">View</a> </li>\n            </ul>\n            <div class=\"panel panel-default\">\n                <div class=\"panel-body\">\n                    <div class=\"item-image-panel\"> <img src=\"/img/item-image-sample.png\" alt=\"{{item.Title}}\" />\n                        <div class=\"caption\">Sample image with caption.</div>\n                    </div>\n                    <h3>{{item.Title}}</h3>\n                    <p>{{item.Description}}</p>\n                    <p>{{item.Text}}</p>\n                </div>\n            </div>\n        </div>\n    </div>\n    ",
+                    styles: []
                 }),
                 __metadata("design:paramtypes", [item_service_1.ItemService,
                     router_1.Router,
