@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using calledOpenGameListWebApp.Classes;
 using calledOpenGameListWebApp.Data;
 using calledOpenGameListWebApp.Data.Items;
 using calledOpenGameListWebApp.Data.Users;
@@ -14,6 +15,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Nelibur.ObjectMapper;
 
 namespace calledOpenGameListWebApp
@@ -77,9 +79,27 @@ namespace calledOpenGameListWebApp
                     context.Context.Response.Headers["Expires"] = Configuration["StaticFiles:Headers:Expires"];
                 }
             });
-                                                          
+
+            // Add a custom Jwt Provider to generate Tokens 
+            app.UseJwtProvider();
+
+            // Add the Jwt Bearer Header Authentication to validate Tokens
+            app.UseJwtBearerAuthentication(new JwtBearerOptions()
+            {
+                AutomaticAuthenticate = true,
+                AutomaticChallenge = true,
+                RequireHttpsMetadata = false,
+                TokenValidationParameters = new TokenValidationParameters()
+                {
+                    IssuerSigningKey = JwtProvider.SecurityKey,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = JwtProvider.Issuer,
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                }
+            });
             // Add MVC to the pipeline
-                    app.UseMvc();
+            app.UseMvc();
             // TinyMapper binding configuration
             TinyMapper.Bind<Item, ItemViewModel>();
 
